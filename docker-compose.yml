@@ -1,0 +1,48 @@
+version: '2'
+
+services:
+
+  main:
+#    depends_on:
+#      - db
+    image: pyro/bareos-postgres
+    links:
+#      - db:db_nextcloud
+    environment:
+#      - UID=1000
+#      - GID=1000
+    volumes:
+#    - data:/data
+#    - config:/config
+#    - apps2:/apps2
+    ports:
+      - 9101:9101
+      - 9102:9102
+      - 9103:9103
+#      - 80:80
+#    entrypoint:
+#      - 
+
+#RUN service bareos-dir start 
+#RUN service bareos-sd start 
+#RUN service bareos-fd start
+
+  #db:
+    #image: mariadb:10
+    #volumes:
+      #- mysql:/var/lib/mysql
+    #environment:
+      #- MYSQL_ROOT_PASSWORD=supersecretpassword
+      #- MYSQL_DATABASE=nextcloud
+      #- MYSQL_USER=nextcloud
+      #- MYSQL_PASSWORD=supersecretpassword
+
+volumes:
+  #data:
+    #driver: local
+  #config:
+    #driver: local
+  #apps2:
+    #driver: local
+  #mysql:
+    #driver: local
